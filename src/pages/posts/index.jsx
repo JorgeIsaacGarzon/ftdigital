@@ -18,7 +18,8 @@ export default function Posts({ posts }) {
   );
 }
 
-export async function getStaticProps() {
+// From Server, each render request
+export async function getServerSideProps() {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   const posts = await response.json();
   return {

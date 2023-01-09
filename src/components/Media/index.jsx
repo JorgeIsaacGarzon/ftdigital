@@ -12,7 +12,9 @@ export default function Media({ picture }) {
         src={picture.thumbnail}
         width={200}
         height={200}
-        className="rounded-md"
+        priority={picture.id === 521}
+        position="fixed"
+        className="rounded-md w-auto h-auto"
       />
     </div>
   );

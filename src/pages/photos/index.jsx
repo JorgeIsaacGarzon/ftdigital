@@ -9,7 +9,7 @@ export default function Photos({ pictures }) {
       </h1>
 
       <div className="w-full flex flex-wrap gap-5 px-12 overflow-hidden justify-between">
-        {pictures.slice(1, 14)?.map((picture) => (
+        {pictures.slice(1, 13)?.map((picture) => (
           <Media key={picture.id} picture={picture} />
         ))}
       </div>
@@ -17,7 +17,8 @@ export default function Photos({ pictures }) {
   );
 }
 
-export async function getServerSideProps() {
+// From static, just one request
+export async function getStaticProps() {
   const response = await fetch("https://www.freetogame.com/api/games");
   const pictures = await response.json();
   return {
